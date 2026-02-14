@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Youuuuuuu</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: cursive;
+}
+
+/* Garden container */
+.garden {
+  position: relative;
+  width: 500px;
+  height: 600px;
+}
+
+/* Bouquet wrapper */
+.bouquet {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform-origin: bottom center;
+}
+
+/* Stem */
+.stem {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  width: 6px;
+  height: 220px;
+  background: linear-gradient(to top, #0f0, #3aff3a);
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+/* Leaves */
+.leaf {
+  position: absolute;
+  width: 70px;
+  height: 35px;
+  background: radial-gradient(circle at 30% 30%, #3aff3a, #006400);
+  border-radius: 50%;
+}
+
+.leaf.left {
+  bottom: 180px;
+  left: -80px;
+  transform: rotate(-30deg);
+}
+
+.leaf.right {
+  bottom: 150px;
+  right: -80px;
+  transform: rotate(30deg);
+}
+
+/* Flower */
+.flower {
+  position: absolute;
+  bottom: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+}
+
+/* Petals */
+.petal {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #ffff66, #ffcc00);
+  border-radius: 50%;
+  top: 30px;
+  left: 30px;
+  transform-origin: 30px 30px;
+  animation: glow 2s infinite alternate;
+}
+
+.petal:nth-child(1) { transform: rotate(0deg) translateY(-40px); }
+.petal:nth-child(2) { transform: rotate(60deg) translateY(-40px); }
+.petal:nth-child(3) { transform: rotate(120deg) translateY(-40px); }
+.petal:nth-child(4) { transform: rotate(180deg) translateY(-40px); }
+.petal:nth-child(5) { transform: rotate(240deg) translateY(-40px); }
+.petal:nth-child(6) { transform: rotate(300deg) translateY(-40px); }
+
+/* Center */
+.center {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, #fff, #ffd700);
+  border-radius: 50%;
+  top: 35px;
+  left: 35px;
+}
+
+/* Ribbon */
+.ribbon-wrap {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 40px;
+  background: linear-gradient(to right, #ff3366, #ff6699);
+  border-radius: 20px;
+  z-index: 5;
+}
+
+.ribbon-knot {
+  position: absolute;
+  bottom: 135px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #ff99aa, #ff3366);
+  border-radius: 50%;
+  z-index: 6;
+}
+
+.ribbon-tail-left,
+.ribbon-tail-right {
+  position: absolute;
+  bottom: 80px;
+  width: 30px;
+  height: 70px;
+  background: linear-gradient(to bottom, #ff3366, #cc0044);
+  z-index: 4;
+  border-radius: 10px;
+}
+
+.ribbon-tail-left {
+  left: calc(50% - 80px);
+  transform: rotate(-20deg);
+}
+
+.ribbon-tail-right {
+  left: calc(50% + 50px);
+  transform: rotate(20deg);
+}
+
+/* Message */
+.message {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ff4d6d;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #ff99aa, 0 0 20px #ff3366;
+  animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText {
+  from { opacity: 0.8; }
+  to { opacity: 1; text-shadow: 0 0 20px #ff1a4d, 0 0 40px #ff6699; }
+}
+
+/* Floating hearts */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: orange;
+  transform: rotate(45deg);
+  animation: float 5s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: orange;
+  border-radius: 50%;
+}
+
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: -10px; top: 0; }
+
+@keyframes glow {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.5); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+  100% { transform: translateY(-500px) rotate(45deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="garden">
+
+  <div class="message">Happy Valentine's, Miss!</div>
+
+  <!-- 6 FLOWERS ARRANGED LIKE BOUQUET -->
+  <div class="bouquet" style="transform: translateX(-50%) rotate(0deg);"></div>
+  <div class="bouquet" style="transform: translateX(-130%) rotate(-15deg);"></div>
+  <div class="bouquet" style="transform: translateX(-210%) rotate(-25deg);"></div>
+  <div class="bouquet" style="transform: translateX(30%) rotate(15deg);"></div>
+  <div class="bouquet" style="transform: translateX(110%) rotate(25deg);"></div>
+  <div class="bouquet" style="transform: translateX(190%) rotate(35deg);"></div>
+
+  <!-- Ribbon -->
+  <div class="ribbon-wrap"></div>
+  <div class="ribbon-knot"></div>
+  <div class="ribbon-tail-left"></div>
+  <div class="ribbon-tail-right"></div>
+
+</div>
+
+<script>
+const bouquets = document.querySelectorAll(".bouquet");
+
+bouquets.forEach(b => {
+  b.innerHTML = `
+    <div class="stem"></div>
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+    <div class="flower">
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="petal"></div>
+      <div class="center"></div>
+    </div>
+  `;
+});
+
+// Floating hearts
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.style.left = Math.random() * window.innerWidth + "px";
+  heart.style.bottom = "0px";
+  heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}
+
+setInterval(createHeart, 800);
+</script>
+
+</body>
+</html>
